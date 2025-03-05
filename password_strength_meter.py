@@ -6,27 +6,27 @@ st.subheader("Check your Password's Strength")
 # def main():
 #     st.title("Password Strength Meter")
 #     st.subheader("")
-# if __name__ == '__main__':
-#     main()
+# 
 def password_checker(password):
     score =0
-    feedback = []
+
     if len(password) >= 8:
+     
          score += 1
     else:
-         feedback.append("Password must be at least 8 characters")     
+         st.warning("Password must be at least 8 characters")     
     if re.search(r"[A-Z]",password) and re.search(r"[a-z]", password):
          score += 1
     else:
-         feedback.append("Password must contain both uppercase and lowercase characters")     
+         st.warning("Password must contain both uppercase and lowercase characters")     
     if re.search(r"\d",password):
          score += 1
     else:
-         feedback.append("password must contain at least one digit")
+         st.warning("password must contain at least one digit")
     if re.search(r"[-#@$%&*!]",password):
          score += 1
     else:
-         feedback.append("password must contain at least on special character")
+         st.warning("password must contain at least on special character")
     if score == 4:
          st.success("Password is strong") 
     elif score == 3:
@@ -40,3 +40,5 @@ else:
      st.error("Please enter a password to check")     
 
 
+if __name__ == '__main__':
+#     main()

@@ -6,6 +6,7 @@ st.set_page_config(page_title="File onverter",layout="wide")
 st.title("File Converter and Cleaner")
 st.write("upload csv or excel files, clean data, and convert formats ")
 files = st.file_uploader("Upload csv or excel files",type=["csv","xlsx"],accept_multiple_files=True)
+
 if  files:
     for file in files:
         ext = file.name.split(".")[-1]

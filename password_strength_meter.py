@@ -38,7 +38,3 @@ if st.button("Check"):
      password_checker(password)
 else:
      st.error("Please enter a password to check")     
-
-
-if __name__ == '__main__':
-#     main()
